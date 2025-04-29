@@ -12,7 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-
+import { EffectCoverflow, Pagination } from "swiper/modules";
 const Home = () => {
   // Move useState hook inside the component
   const [currentPage, setCurrentPage] = useState(0);
@@ -200,25 +200,55 @@ const Home = () => {
 
   const client = [
     {
-      main: "https://cdn.pixabay.com/photo/2022/09/16/15/53/city-7458934_960_720.jpg",
-      sub: "https://cdn.pixabay.com/photo/2022/09/16/15/53/city-7458934_960_720.jpg",
+      main: "https://img.freepik.com/free-vector/shopping-cart-realistic_1284-6011.jpg?uid=R25115437&ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
+      sub: "https://img.freepik.com/free-photo/cheerful-young-family-with-child_171337-2371.jpg?uid=R25115437&ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
     },
 
     {
-      main: "https://cdn.pixabay.com/photo/2022/09/16/15/53/city-7458934_960_720.jpg",
-      sub: "https://cdn.pixabay.com/photo/2022/09/16/15/53/city-7458934_960_720.jpg",
+      main: "https://img.freepik.com/premium-photo/human-hand-working-with-3d-rendering-cashier-machine_493806-1446.jpg?uid=R25115437&ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
+      sub: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPLspAVOpnWLCMyomOGN17_KWuVajx4nSedw&s",
     },
 
     {
-      main: "https://cdn.pixabay.com/photo/2022/09/16/15/53/city-7458934_960_720.jpg",
-      sub: "https://cdn.pixabay.com/photo/2022/09/16/15/53/city-7458934_960_720.jpg",
+      main: "https://img.freepik.com/free-photo/high-angle-customer-paying-with-nfc-device_23-2150690008.jpg?uid=R25115437&ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
+      sub: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVe7Tea7ijy8pHUjXTzdZ8sWRaL91wmL4hag&s",
     },
     {
-      main: "https://cdn.pixabay.com/photo/2022/09/16/15/53/city-7458934_960_720.jpg",
-      sub: "https://cdn.pixabay.com/photo/2022/09/16/15/53/city-7458934_960_720.jpg",
+      main: "https://img.freepik.com/free-photo/volunteer-scanning-food-donations-charity_23-2149230520.jpg?t=st=1745901732~exp=1745905332~hmac=e49e82f73d883f6cd71909bd57cf184859039d72561e8d8a990876ea9508a04c&w=996",
+      sub: "https://republicaimg.nagariknewscdn.com/shared/web/uploads/media/1706662924_bhatbhateni-1200x560_20240131134202.jpg",
+    },
+
+    {
+      main: "https://img.freepik.com/free-photo/volunteer-scanning-food-donations-charity_23-2149230520.jpg?t=st=1745901732~exp=1745905332~hmac=e49e82f73d883f6cd71909bd57cf184859039d72561e8d8a990876ea9508a04c&w=996",
+      sub: "https://republicaimg.nagariknewscdn.com/shared/web/uploads/media/1706662924_bhatbhateni-1200x560_20240131134202.jpg",
     },
   ];
 
+  const youtubeVideos = [
+    {
+      id: 1,
+      title: "Video 1",
+      videoId: "1CxAUPJlgos",
+    },
+    {
+      id: 2,
+      title: "Video 2",
+      videoId: "YdqFa13Q1pg",
+    },
+    {
+      id: 3,
+      title: "Video 3",
+      videoId: "dQw4w9WgXcQ", // Replace with real video IDs
+    },
+  ];
+
+  const companies = [
+    { name: "Microsoft", url: "https://logo.clearbit.com/microsoft.com" },
+    { name: "Google", url: "https://logo.clearbit.com/google.com" },
+    { name: "IBM", url: "https://logo.clearbit.com/ibm.com" },
+    { name: "Amazon", url: "https://logo.clearbit.com/amazon.com" },
+    { name: "Cisco", url: "https://logo.clearbit.com/cisco.com" },
+  ];
   return (
     <div>
       <Nav />
@@ -308,8 +338,6 @@ const Home = () => {
 
       {/* featured product */}
       <div className="container mx-auto px-4 py-8 md:py-16 my-16">
-        <div className="text-sm font-medium text-gray-500 mb-4">Product</div>
-
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-4xl font-bold">Feature Product</h2>
           <div className="flex gap-2">
@@ -396,30 +424,75 @@ const Home = () => {
 
           {/* Right Sidebar */}
           <div className="lg:col-span-4">
-            <div className="relative w-full overflow-hidden pb-6">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/1CxAUPJlgos?si=ILHII0XaMYsIb3Vv"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
+            <h2 className="text-green-500 font-medium mb-4 uppercase">
+              Product Guide
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative overflow-hidden aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/1CxAUPJlgos?si=ILHII0XaMYsIb3Vv"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                ></iframe>
+              </div>
 
-            <div className="relative w-full overflow-hidden ">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/YdqFa13Q1pg?si=r2sj-S22RtYmqrqT"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+              <div className="relative overflow-hidden aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/YdqFa13Q1pg?si=r2sj-S22RtYmqrqT"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                ></iframe>
+              </div>
+
+              <div className="relative overflow-hidden aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/1CxAUPJlgos?si=ILHII0XaMYsIb3Vv"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                ></iframe>
+              </div>
+
+              <div className="relative overflow-hidden aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/YdqFa13Q1pg?si=r2sj-S22RtYmqrqT"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                ></iframe>
+              </div>
+
+              <div className="relative overflow-hidden aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/YdqFa13Q1pg?si=r2sj-S22RtYmqrqT"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                ></iframe>
+              </div>
+
+              <div className="relative overflow-hidden aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/1CxAUPJlgos?si=ILHII0XaMYsIb3Vv"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -557,14 +630,19 @@ const Home = () => {
         </div>
       </div>
 
+      {/* latest collection */}
       <div className="bg-[#1E2939] outline-2 outline-green-400">
         <div className="container mx-auto px-4 py-8 md:py-16 my-12">
           <div className="text-sm font-medium text-emerald-600 uppercase tracking-wider">
             Latest
           </div>
-          <h2 className="text-4xl font-bold text-white pb-12 uppercase">
-            Our Latest Collection
-          </h2>
+          <div className="flex justify-between items-center pb-12">
+            <h2 className="text-4xl font-bold text-white uppercase">
+              Our Latest Collection
+            </h2>
+            <h2 className="text-sm font-medium text-emerald-600">See More ....</h2>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((product, index) => (
               <div
@@ -603,26 +681,67 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-3xl">Our Products at Market</h1>
-        <div className="grid grid-cols-4 gap-12">
+      {/* products at market */}
+      <div className="container mx-auto px-4 mb-12 ">
+        <h2 className="text-4xl font-bold uppercase pb-12">
+          {" "}
+          Products at market
+        </h2>
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          slidesPerView={"3"}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+          }}
+          pagination={true}
+          modules={[EffectCoverflow, Pagination]}
+          className="mySwiper py-12"
+        >
           {client.map((item, index) => (
-            <div key={index} className="relative">
-              <img src={item.main} alt="" />
-              <img src={item.sub} alt="" />
-            </div>
+            <SwiperSlide key={index} className="relative py-8 pb-24 ">
+              <img src={item.main} alt="" className="rounded-lg w-full h-84" />
+              <img
+                src={item.sub}
+                alt=""
+                className="rounded-full w-42 h-42 absolute -translate-y-1/2 -right-4 outline-4 outline-white"
+              />
+            </SwiperSlide>
           ))}
-          <div className="relative">
-            <img
-              src="https://cdn.pixabay.com/photo/2019/09/13/07/22/mouse-4473299_1280.jpg"
-              alt=""
-              className="rounded-2xl w-full h-76"
-            />
-            <img
-              src="https://cdn.pixabay.com/photo/2022/09/16/15/53/city-7458934_960_720.jpg"
-              alt=""
-              className="rounded-full w-42 h-42 absolute -translate-y-2/3 -right-4 outline-4 outline-white"
-            />
+        </Swiper>
+      </div>
+
+      {/* trusted by brands  */}
+      <div className="py-16 bg-gradient-to-t from-gray-500 to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Trusted By Industry Leaders
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-green-600 to-green-700 mx-auto mb-6"></div>
+            <p className="text-lg text-white max-w-2xl mx-auto">
+              We're proud to partner with organizations across various
+              industries
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-center">
+            {companies.map((company, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex justify-center"
+              >
+                <img
+                  src={company.url}
+                  alt={company.name}
+                  className="h-12 object-contain transition-all"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
