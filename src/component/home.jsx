@@ -202,6 +202,7 @@ const Home = () => {
     {
       main: "https://img.freepik.com/free-vector/shopping-cart-realistic_1284-6011.jpg?uid=R25115437&ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       sub: "https://img.freepik.com/free-photo/cheerful-young-family-with-child_171337-2371.jpg?uid=R25115437&ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
+    text:"Bhatbhateini"
     },
 
     {
@@ -710,6 +711,7 @@ const Home = () => {
                 alt=""
                 className="rounded-full w-42 h-42 absolute -translate-y-1/2 -right-4 outline-4 outline-white"
               />
+              
             </SwiperSlide>
           ))}
         </Swiper>
